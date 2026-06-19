@@ -32,64 +32,60 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 48px 16px 72px;
+      padding: 48px 16px 96px;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       position: relative;
       overflow-x: hidden;
-      background: #0a0a0a;
+      background: #e8e4de;
     }
 
-    /* Background photo with cinematic dark overlay */
+    /* Background — photo com overlay claro */
     .bg-photo {
       position: fixed;
       inset: 0;
-      background: url('foto%20de%20perfil.JPG') center 20% / cover no-repeat;
+      background: url('foto%20de%20perfil%20.jpg') center 20% / cover no-repeat;
       z-index: 0;
     }
     .bg-overlay {
       position: fixed;
       inset: 0;
       background: linear-gradient(
-        160deg,
-        rgba(6,6,6,0.75) 0%,
-        rgba(6,6,6,0.82) 50%,
-        rgba(6,6,6,0.90) 100%
+        150deg,
+        rgba(245,242,237,0.78) 0%,
+        rgba(240,237,232,0.82) 50%,
+        rgba(235,231,225,0.86) 100%
       );
       z-index: 1;
     }
 
-    /* ── macOS window card ── */
+    /* ── macOS Liquid Glass window ── */
     .mac-window {
       position: relative;
       z-index: 10;
       width: 100%;
       max-width: 450px;
-      background: rgba(20, 20, 20, 0.82);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 16px;
+      backdrop-filter: blur(48px) saturate(180%);
+      -webkit-backdrop-filter: blur(48px) saturate(180%);
       overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(255,255,255,0.06) inset;
+      box-shadow:
+        0 2px 0 rgba(255,255,255,0.8) inset,
+        0 20px 60px rgba(0,0,0,0.10),
+        0 4px 16px rgba(0,0,0,0.06);
     }
 
-    /* Title bar with traffic lights */
+    /* Title bar */
     .mac-titlebar {
       display: flex;
       align-items: center;
       padding: 13px 16px;
-      background: rgba(38,38,38,0.75);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.35);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
-    .traffic-lights {
-      display: flex;
-      gap: 7px;
-    }
-    .traffic-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
+    .traffic-lights { display: flex; gap: 7px; }
+    .traffic-dot { width: 12px; height: 12px; border-radius: 50%; }
     .dot-red    { background: #ff5f57; }
     .dot-yellow { background: #febc2e; }
     .dot-green  { background: #28c840; }
@@ -97,32 +93,30 @@
       flex: 1;
       text-align: center;
       font-size: 12px;
-      color: rgba(255,255,255,0.38);
+      color: rgba(0,0,0,0.38);
       font-weight: 400;
       letter-spacing: 0.02em;
     }
     .traffic-spacer { width: 38px; }
 
-    /* Card body */
-    .mac-body {
-      padding: 30px 26px 34px;
-    }
+    /* Body */
+    .mac-body { padding: 28px 24px 32px; }
 
     /* ── Profile ── */
     .profile {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
     .avatar-wrap {
-      width: 78px;
-      height: 78px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       overflow: hidden;
-      border: 1.5px solid rgba(255,255,255,0.14);
-      margin-bottom: 14px;
-      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.85);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      margin-bottom: 13px;
     }
     .avatar-wrap img {
       width: 100%;
@@ -133,106 +127,85 @@
     .profile-name {
       font-size: 17px;
       font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 5px;
+      color: #1a1a1a;
+      margin-bottom: 4px;
       text-align: center;
       letter-spacing: -0.01em;
     }
     .profile-role {
       font-size: 11px;
       font-weight: 400;
-      color: rgba(255,255,255,0.38);
+      color: rgba(0,0,0,0.4);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       text-align: center;
     }
 
-    /* ── Content cards ── */
-    .content-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 22px;
-    }
-    .content-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 13px 15px;
-    }
-    .content-card p {
-      font-size: 12.5px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.55);
-      font-weight: 300;
-    }
-    .content-card p + p {
-      margin-top: 8px;
-    }
-    .content-card p em {
-      color: rgba(255,255,255,0.85);
-      font-style: normal;
-      font-weight: 500;
-    }
-
     /* ── Tags ── */
-    .label {
-      font-size: 10px;
-      color: rgba(255,255,255,0.28);
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px;
+      justify-content: center;
+      gap: 6px;
       margin-bottom: 26px;
     }
     .tag {
       font-size: 11px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.45);
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 6px;
-      padding: 4px 10px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.58);
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 5px 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
-    /* ── Link cards — macOS notification style ── */
+    /* ── Links ── */
     .links {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      margin-bottom: 30px;
+      gap: 7px;
+      margin-bottom: 28px;
     }
+
+    /* Joana CTA */
+    .joana-cta {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: rgba(0,0,0,0.45);
+      line-height: 1.6;
+      text-align: center;
+      padding: 10px 4px 4px;
+    }
+
     .link-card {
       display: flex;
       align-items: center;
       gap: 12px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 10px;
-      padding: 13px 14px;
+      background: rgba(255,255,255,0.50);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 12px;
+      padding: 13px 15px;
       text-decoration: none;
-      transition: background 0.18s, border-color 0.18s;
+      transition: background 0.18s, box-shadow 0.18s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     }
     .link-card:hover {
-      background: rgba(255,255,255,0.09);
-      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.75);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
     .link-card.primary {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.16);
+      background: rgba(0,0,0,0.06);
+      border-color: rgba(0,0,0,0.10);
     }
     .link-card.primary:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.22);
+      background: rgba(0,0,0,0.09);
     }
+
     .link-num {
       font-size: 10px;
-      color: rgba(255,255,255,0.22);
+      color: rgba(0,0,0,0.22);
       font-weight: 500;
       letter-spacing: 0.04em;
       min-width: 20px;
@@ -240,57 +213,34 @@
     }
     .link-texts {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
       text-align: left;
     }
     .link-title {
       font-size: 13px;
       font-weight: 500;
-      color: #ffffff;
-    }
-    .link-sub {
-      font-size: 11px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.35);
+      color: #1a1a1a;
+      display: block;
     }
     .link-arrow {
       font-size: 16px;
-      color: rgba(255,255,255,0.2);
+      color: rgba(0,0,0,0.2);
       flex-shrink: 0;
       line-height: 1;
-    }
-
-    /* Badge */
-    .badge {
-      display: inline-block;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 4px;
-      padding: 2px 6px;
-      margin-left: 6px;
-      vertical-align: middle;
     }
 
     /* Divider */
     .rule {
       width: 24px;
       height: 1px;
-      background: rgba(255,255,255,0.1);
-      margin: 0 auto 22px;
+      background: rgba(0,0,0,0.1);
+      margin: 0 auto 20px;
     }
 
     /* Footer */
     footer {
       text-align: center;
       font-size: 11px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.22);
+      color: rgba(0,0,0,0.28);
       letter-spacing: 0.06em;
     }
     footer a {
@@ -298,13 +248,48 @@
       text-decoration: none;
       transition: color 0.18s;
     }
-    footer a:hover { color: rgba(255,255,255,0.5); }
+    footer a:hover { color: rgba(0,0,0,0.55); }
+
+    /* ── Floating WhatsApp button ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 22px;
+      z-index: 100;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.40), 0 2px 8px rgba(0,0,0,0.15);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.50), 0 4px 12px rgba(0,0,0,0.18);
+    }
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: #ffffff;
+    }
   </style>
 </head>
 <body>
 
   <div class="bg-photo"></div>
   <div class="bg-overlay"></div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/5532999644209" class="whatsapp-float"
+     onclick="trackContact(); return true;" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
   <div class="mac-window">
 
@@ -322,61 +307,60 @@
 
       <div class="profile">
         <div class="avatar-wrap">
-          <img src="foto%20de%20perfil.JPG" alt="Mariana Manfredinny">
+          <img src="foto%20de%20perfil%20.jpg" alt="Mariana Manfredinny">
         </div>
         <div class="profile-name">Mariana Manfredinny</div>
         <div class="profile-role">Diretora de Marketing Fracionada</div>
       </div>
 
-      <div class="content-cards">
-        <div class="content-card">
-          <p>Conteúdo puxa atenção. Tráfego amplifica o que já converte. Automações com IA encurtam o caminho do lead até a decisão. <em>CRM conecta o comportamento do cliente ao algoritmo</em> e qualifica a demanda que chega.</p>
-          <p>Quando essas peças trabalham em conjunto, o marketing passa a ser <em>investimento com retorno mensurável.</em></p>
-        </div>
-        <div class="content-card">
-          <p>Quatro anos estruturando estratégias de marketing digital que geram demanda e aumentam faturamento. Conteúdo, tráfego pago, CRM, automação e IA aplicados juntos, do primeiro contato do lead até a venda fechada.</p>
-        </div>
-      </div>
-
-      <p class="label">O que fica na sua empresa</p>
       <div class="tags">
-        <span class="tag">Estratégia</span>
         <span class="tag">Tráfego pago</span>
-        <span class="tag">Conteúdo</span>
-        <span class="tag">CRM</span>
         <span class="tag">Automação</span>
-        <span class="tag">Equipe estruturada</span>
-        <span class="tag">Landing pages</span>
-        <span class="tag">E-mail marketing</span>
-        <span class="tag">IA aplicada</span>
+        <span class="tag">IA</span>
+        <span class="tag">CRM</span>
+        <span class="tag">Estratégias de marketing digital</span>
       </div>
 
       <div class="links">
 
-        <a href="https://wa.me/5532999644209" class="link-card primary"
-           onclick="trackContact(); return true;">
+        <a href="https://empresa.marimanfredinny.com/fomulario/" class="link-card primary" target="_blank" rel="noopener">
           <span class="link-num">01</span>
           <span class="link-texts">
-            <span class="link-title">Conversar sobre o seu negócio</span>
-            <span class="link-sub">Diagnóstico direto, com proposta na hora</span>
+            <span class="link-title">Quero uma análise gratuita</span>
           </span>
           <span class="link-arrow">›</span>
         </a>
 
-        <a href="https://empresas.marimanfredinny.com" class="link-card">
+        <a href="https://empresa.marimanfredinny.com/" class="link-card" target="_blank" rel="noopener">
           <span class="link-num">02</span>
           <span class="link-texts">
-            <span class="link-title">Conheça meu trabalho</span>
-            <span class="link-sub">Cases, método e entregas</span>
+            <span class="link-title">Meus serviços</span>
           </span>
           <span class="link-arrow">›</span>
         </a>
 
-        <a href="#" class="link-card">
+        <p class="joana-cta">Acesse a Joana no link abaixo, uma social media estrategista criada pra te entregar resultados por meio de conteúdos.</p>
+
+        <a href="https://www.socialmediajoana.com.br/" class="link-card" target="_blank" rel="noopener">
           <span class="link-num">03</span>
           <span class="link-texts">
-            <span class="link-title">Joana</span>
-            <span class="link-sub">Ferramenta de gestão para social medias <span class="badge">Em breve</span></span>
+            <span class="link-title">Joana — Social Media estrategista</span>
+          </span>
+          <span class="link-arrow">›</span>
+        </a>
+
+        <a href="https://calculadora.marimanfredinny.com/" class="link-card" target="_blank" rel="noopener">
+          <span class="link-num">04</span>
+          <span class="link-texts">
+            <span class="link-title">Calculadora gratuita de investimentos em tráfego</span>
+          </span>
+          <span class="link-arrow">›</span>
+        </a>
+
+        <a href="https://cac.marimanfredinny.com/" class="link-card" target="_blank" rel="noopener">
+          <span class="link-num">05</span>
+          <span class="link-texts">
+            <span class="link-title">Calculadora de CAC</span>
           </span>
           <span class="link-arrow">›</span>
         </a>
@@ -386,7 +370,7 @@
       <div class="rule"></div>
 
       <footer>
-        <a href="https://www.instagram.com/marianamanfredinny">@marianamanfredinny</a>
+        <a href="https://www.instagram.com/marianamanfredinny" target="_blank" rel="noopener">@marianamanfredinny</a>
       </footer>
 
     </div>
@@ -407,10 +391,8 @@
     }).catch(function() {});
   }
 
-  // PageView via CAPI (pixel already fired in <head>)
   sendCAPI('PageView', _pixelEventId);
 
-  // Contact event on WhatsApp CTA click
   function trackContact() {
     var evId = 'contact_' + Date.now() + '_' + Math.random().toString(36).substr(2,9);
     fbq('track', 'Contact', {}, {eventID: evId});
